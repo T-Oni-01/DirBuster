@@ -1,0 +1,102 @@
+How to Use This Tool (For Refresher):
+
+* Install required dependencies: "pip install requests"
+
+* If you don't have a Python IDE, run in terminal with: "python dirbuster.py http://example.com" (please me, remember to navigate to the file location first).
+
+* Customizations:
+
+# Basic scan
+python dirbuster.py http://example.com
+
+# Scan with custom wordlist and 20 threads
+python dirbuster.py http://example.com -w custom_wordlist.txt -t 20
+
+# Scan with specific timeout
+python dirbuster.py http://example.com --timeout 3
+
+
+Example of Results:
+
+GENERATED WORDS: 4609                                                          
+
+---- Scanning URL: http://fakebank.thm/ ----
++ http://fakebank.thm/bank-deposit (CODE:200|SIZE:4663)                        
++ http://fakebank.thm/images (CODE:301|SIZE:179) 
+
+Ran:  https://www.kingscollegenigeria.org/
+
+Results:
+
+Loaded 4613 words from wordlist
+[301] https://www.kingscollegenigeria.org/0
+[301] https://www.kingscollegenigeria.org/a
+[301] https://www.kingscollegenigeria.org/A
+[302] https://www.kingscollegenigeria.org/admin
+[301] https://www.kingscollegenigeria.org/as
+[301] https://www.kingscollegenigeria.org/atom
+[200] https://www.kingscollegenigeria.org/comment-page-1
+[302] https://www.kingscollegenigeria.org/dashboard
+[301] https://www.kingscollegenigeria.org/embed
+[302] https://www.kingscollegenigeria.org/favicon.ico
+[200] https://www.kingscollegenigeria.org/feed
+[301] https://www.kingscollegenigeria.org/h
+[301] https://www.kingscollegenigeria.org/H
+[301] https://www.kingscollegenigeria.org/Home
+[301] https://www.kingscollegenigeria.org/home
+[301] https://www.kingscollegenigeria.org/index.php
+[301] https://www.kingscollegenigeria.org/m
+[301] https://www.kingscollegenigeria.org/M
+[301] https://www.kingscollegenigeria.org/me
+[301] https://www.kingscollegenigeria.org/N
+[301] https://www.kingscollegenigeria.org/n
+[301] https://www.kingscollegenigeria.org/p
+[301] https://www.kingscollegenigeria.org/P
+[301] https://www.kingscollegenigeria.org/page1
+[200] https://www.kingscollegenigeria.org/page2
+[301] https://www.kingscollegenigeria.org/pr
+[301] https://www.kingscollegenigeria.org/priv
+[301] https://www.kingscollegenigeria.org/privacy
+[301] https://www.kingscollegenigeria.org/Privacy
+[200] https://www.kingscollegenigeria.org/privacy-policy
+[301] https://www.kingscollegenigeria.org/public
+[301] https://www.kingscollegenigeria.org/pub
+[301] https://www.kingscollegenigeria.org/rdf
+[200] https://www.kingscollegenigeria.org/robots.txt
+[301] https://www.kingscollegenigeria.org/rss
+[301] https://www.kingscollegenigeria.org/rss2
+[301] https://www.kingscollegenigeria.org/s
+[301] https://www.kingscollegenigeria.org/S
+[301] https://www.kingscollegenigeria.org/si
+[301] https://www.kingscollegenigeria.org/site
+[200] https://www.kingscollegenigeria.org/sitemap
+[301] https://www.kingscollegenigeria.org/sitemap.xml
+[200] https://www.kingscollegenigeria.org/SiteMap
+[301] https://www.kingscollegenigeria.org/wp-admin
+[301] https://www.kingscollegenigeria.org/wp-content
+[301] https://www.kingscollegenigeria.org/wp-includes
+
+--------------------------------------------------
+Scan completed. Found 46 paths.
+
+
+Explanation of Results:
+
+* 200 (OK): The resource exists and is accessible
+
+* 301 (Moved Permanently): The resource has permanently moved to a new location (redirect)
+
+* 302 (Found/Temporary Redirect): Temporary redirect to another location
+
+Key Findings:
+* WordPress Installation Detected:
+* wp-admin (301) - WordPress admin panel
+
+* wp-content (301) - WordPress themes/plugins/uploads
+
+* wp-includes (301) - WordPress core files
+
+Administrative Access:
+* admin (302) - Redirects to admin area
+
+* dashboard (302) - Redirects to dashboard
